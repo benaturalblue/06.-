@@ -18,3 +18,35 @@
 // クラスができたら適当なインスタンスを作成し、
 // 自己紹介→年齢加算→自己紹介の順にメソッドを動かして年齢を確認してください。
 
+class Person
+{
+  public $name;
+  public $age;
+  public $gender;
+
+  public function __construct($name, $age, $gender)
+  {
+    $this->name = $name;
+    $this->age = $age;
+    $this->gender = $gender;
+  }
+
+  public function selfIntroduction()
+  {
+    return "私の名前は{$this->name}です。年齢は{$this->age}歳です。性別は{$this->gender}です。";
+  }
+
+  public function addAge()
+  {
+    echo "誕生日が来ました。" . "<br>";
+    $this->age++;
+  }
+}
+
+$person = new Person("鈴木太郎", 25, "男性");
+
+echo $person->selfIntroduction() . "<br>";
+
+$person->addAge();
+
+echo $person->selfIntroduction() . "<br>";
